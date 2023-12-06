@@ -2,7 +2,6 @@
 layout: post
 title: "Learnings studying for the JS119 interview assessment"
 date: 2023-12-05 23:38:00 -0600
-
 ---
 
 These are all the ~~dumb mistakes I've made~~learning experiences I've given
@@ -45,5 +44,29 @@ intentionally not including them here.
     something like `let foo = Array(10).fill(Object());` and of course I got an
     array of 10 elements and each element was a reference to the same one
     object. 🤦
+- There are clearly patterns and ways of doing things that are easier or harder.
+  One thing that I did a few times the hard way was when finding the
+  [first|last] [largest|smallest] element in an array. I'm about to tell you how
+  I was doing it and I swear this is true:
+
+  1. Starting with the array of items I'm looking at . . .
+  2. Create another array of the same length that has the property (e.g. string
+     length) that I care about.
+  3. Find the maximum or minimum or whatever.
+  4. Iterate through the second array until I find the element I'm looking for,
+     then . . .
+  5. Use the index to look up the item in the first array.
+
+  Super straightforward in my mind, but way too many steps. After thinking about
+  the example solution to one of the problems I figured out that there's really
+  a generalizable form to this:
+
+  1. Create an empty variable you're going to return (let's call it
+     `possibleReturnValue`).
+  2. Iterate through the array and test on the property you're looking for, so
+     if it's string length and you want the minimum then you just check every
+     array element length against the `possibleReturnValue` length. The only
+     trick is, if you want to return the first shortest element then you just
+     use `<` but if you want the last shortest element you'd use `<=`.
 
 I'm going to add more to this later.
