@@ -1,4 +1,6 @@
-These are all the ~dumb mistakes I've made~learning experiences I've given
+# Learnings studying for the JS119 interview assessment
+
+These are all the ~~dumb mistakes I've made~~learning experiences I've given
 myself while completing many practice problems. I'm keeping this more as a
 running log for myself, but if it helps others then that's great! Also note that
 I'll stop adding to this document once I have the interview because I don't want
