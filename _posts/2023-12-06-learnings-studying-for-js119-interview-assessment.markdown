@@ -1,4 +1,9 @@
-# Learnings studying for the JS119 interview assessment
+---
+layout: post
+title: "Learnings studying for the JS119 interview assessment"
+date: 2023-12-05 23:38:00 -0600
+
+---
 
 These are all the ~~dumb mistakes I've made~~learning experiences I've given
 myself while completing many practice problems. I'm keeping this more as a
