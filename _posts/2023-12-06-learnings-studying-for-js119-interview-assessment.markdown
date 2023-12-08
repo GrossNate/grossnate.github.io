@@ -69,4 +69,11 @@ intentionally not including them here.
      trick is, if you want to return the first shortest element then you just
      use `<` but if you want the last shortest element you'd use `<=`.
 
-I'm going to add more to this later.
+- Make sure you're returning the right type. E.g. if you're using numbers as
+  object keys, they're actually strings. So if the return value needs to be a
+  number then you need to convert it. Maybe just always have a test for return
+  type.
+- Be super-duper careful about capitalization. I just spent way too much time
+  debugging going through a for loop that had a stopping condition of
+  `someArray.Length`
+
