@@ -4,22 +4,22 @@ title: "Learnings studying for the JS129 interview assessment"
 date: 2024-01-29 12:02:00 -0600
 ---
 
-# Outline
+## Outline
 
 - Make a diagram of the prototypal chain, etc.
 - Write something about `this`
 - Write out examples of each way of making objects, including anything to
   demonstrate inheritance (where possible)
 
-# Object Creation Patterns
+## Object Creation Patterns
 
-## Factory Functions (aka Object Factories aka Factory Object Creation Pattern)
+### Factory Functions (aka Object Factories aka Factory Object Creation Pattern)
 
-## Object Creation with Prototypes (aka Objects Linking to Other Objects - OLOO)
+### Object Creation with Prototypes (aka Objects Linking to Other Objects - OLOO)
 
 -prototypal inheritance
 
-## Object Constructors (aka Constructors aka Constructor Functions)
+### Object Constructors (aka Constructors aka Constructor Functions)
 
 -pseudo-classical inheritance
 ```javascript
@@ -41,11 +41,11 @@ const sampleWristWatch = new WristWatch();
 ```
 ![Diagram of how the prototypal chain works for object constructors](/docs/assets/images/constructor_functions_diagram.svg)
 
-## Classes
+### Classes
 
 -pseudo-classical inheritance
 
-# Weird Stuff
+## Weird Stuff
 
 - If you create an object with an object constructor, JavaScript knows what type
   of object it is, even if it might not say so when you do `console.log(obj);`:
@@ -65,7 +65,7 @@ const sampleWristWatch = new WristWatch();
 
 - Here's another list item.
 
-# Future thoughts
+## Future thoughts
 
 I'd like to re-learn Graphviz and the DOT Language to generate diagrams for this
 blog, and it looks like there are a few plugins for Jekyll that will handle the
