@@ -17,9 +17,33 @@ date: 2024-01-29 12:02:00 -0600
 
 ## Object Creation with Prototypes (aka Objects Linking to Other Objects - OLOO)
 
+-prototypal inheritance
+
 ## Object Constructors (aka Constructors aka Constructor Functions)
 
+-pseudo-classical inheritance
+```javascript
+function Timepiece() {}
+Timepiece.prototype.getCurrentTime = function() {
+  return new Date().getTime();
+}
+
+function WristWatch() {
+  Timepiece.call(this);
+}
+WristWatch.prototype = Object.create(Timepiece.prototype);
+WristWatch.prototype.constructor = WristWatch;
+WristWatch.prototype.putOnWrist = function() {};
+
+const sampleClock = new Timepiece();
+
+const sampleWristWatch = new WristWatch();
+```
+![Diagram of how the prototypal chain works for object constructors](/docs/assets/images/constructor_functions_diagram.svg)
+
 ## Classes
+
+-pseudo-classical inheritance
 
 # Weird Stuff
 
