@@ -120,16 +120,89 @@ are pure are always pure regardless of the arguments passed in).
   - **assertion** - the verification step that checks what the program did (aka
     **expectations**)
 
-> [!WARNING]
-> Remember a test can be disabled either with `xtest` or `test.skip`
+> [!WARNING] Remember a test can be disabled either with `xtest` or `test.skip`
 
-SEAT approach:
+### SEAT approach
+
 - **S**et up the necessary objects
 - **E**xecute the code against the object we're testing
 - **A**ssert the results of the execution
 - **T**ear down and clean up any lingering artifacts
 
+### Code coverage
+
+- Generally, what % of functions/methods are called by your tests or the % of
+  lines of codes executed by your tests.
+- Not foolproof! Just one metric to try to gauge code quality/reliability
+- `jest --coverage somefile.test.js`
+- can get a detailed report looking at `coverage/lcov-report/index.html` in the
+  browser
+
 ## Packaging code
+
+- add `node_modules` to `.gitignore` - because you're capturing your project's
+  dependencies, but you actually want anyone else to download those dependencies
+  from the source rather than from you
+- it's more efficient to only import the specific functions you need
+  - if the package is split into independent files you can do:
+    `const chunk = require('lodash/chunk');`
+  - if the package isn't split then you can do:
+    `const chunk = require('lodash').chunk;`
+- the preferred way is to add the dependencies to `package.json` rather than
+  having users do `npm install` for each dependency (this can be confusing
+  because you can use `npm install somepackage --save` to add it to your
+  `package.json` file)
+- So running `npm install` will both install any dependencies specified in
+  `package.json` and install any new dependencies and add them to
+  `package.json`. It will also add specific versions to `package-lock.json` (on
+  first install) or install the specific versions read from `package-lock.json`
+  (when installing a package that's already been specified). So basically it
+  does a sort of a sync-like operation.
+
+Project file structure:
+
+-dist
+
+- todo.js
+- todolist.js
+- lib
+  - todo.js
+  - todolist.js
+- index.js
+- node_modules
+- package-lock.json
+- package.json
+- test
+  - todolist.test.js
+
+npm commands and notes:
+
+- `npm install somepackage --save` explicitly says it's going to be a dependency
+  of your project
+- `--save-dev` flag says it's only a dependency for development
+- `npx` will run a local version of an executable package and if it can't find
+  it locally it will look for it globally and if it still doesn't find it, it
+  will download and use a temporary version of the named package
+- `npm uninstall` will remove a dependency (both the `--save` and `--save-dev`
+  flags apply here also)
+- `npm prune` will remove packages from `node_modules` if you've manually edited
+  `package.json`
+- The `-g` flag will install a package globally.
+
+### Misc
+
+- **transpilation** is converting source code from one language to another
+  language with a similar level of abstraction
+- Babel is the best and most widely used transpilation tool for converting
+  JavaScript code to a lower version
+- Scripts
+  - add the script to `package.json`
+  - run with `npm run scriptname`
+  - you don't need `npx` in your scripts, because npm knows how to find the
+    executables in the local package (even if those locations aren't in your
+    PATH) and will use local packages in preference to other locations
+- To publish, you execute `npm publish --access public` but you've got to set up
+  an npm account and be logged in first.
 
 ## Regex
 
