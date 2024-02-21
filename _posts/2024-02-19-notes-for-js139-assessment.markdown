@@ -116,7 +116,13 @@ are pure are always pure regardless of the arguments passed in).
 - Write tests to prevent **regression**
 - Vocab:
   - **test suite** - all the tests for a project
-  - **test** - specific situation you're trying to test.
+  - **test** - specific situation you're trying to test (aka **specs**)
+  - **assertion** - the verification step that checks what the program did (aka
+    **expectations**)
+
+> [!WARNING]
+> Remember a test can be disabled either with `xtest` or `test.skip`
+
 
 ## Packaging code
 
