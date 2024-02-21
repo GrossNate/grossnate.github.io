@@ -57,7 +57,8 @@ date: 2024-02-19 17:00:00 -0600
 ## IIFEs
 
 Important distinction! Look at these two concepts:
-- can use to make private _scope_ (making sure your variable names, including 
+
+- can use to make private _scope_ (making sure your variable names, including
   function names, don't conflict with other variables in the program)
 - can use to make private _data_ (don't necessarily need them, but can make the
   code shorter) - this is encapsulation, not scope!
@@ -77,10 +78,10 @@ Important distinction! Look at these two concepts:
 - **exception handler** is the `try/catch` statements
 - You should only use exceptions to hande exceptional conditions - not normal
   stuff like invalid user input.
-    - Throw when an event occurs that should not be ignored or when a condition
-      is truly anomalous
-    - Catch only those errors that you can handle. Re-throw the error if you
-      can't handle it.
+  - Throw when an event occurs that should not be ignored or when a condition is
+    truly anomalous
+  - Catch only those errors that you can handle. Re-throw the error if you can't
+    handle it.
 - `catch` blocks should do as little as possible
 
 ## Side effects
@@ -109,6 +110,13 @@ are pure are always pure regardless of the arguments passed in).
 
 ## Testing
 
+- When setting up, need to do `touch jest.config.js`
+- Watch out: your file needs to be named ending with `.test.js` and that's
+  `test` singular - Jest will fail if it's plural.
+- Write tests to prevent **regression**
+- Vocab:
+  - **test suite** - all the tests for a project
+  - **test** - specific situation you're trying to test.
 
 ## Packaging code
 
