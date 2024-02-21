@@ -123,6 +123,11 @@ are pure are always pure regardless of the arguments passed in).
 > [!WARNING]
 > Remember a test can be disabled either with `xtest` or `test.skip`
 
+SEAT approach:
+- **S**et up the necessary objects
+- **E**xecute the code against the object we're testing
+- **A**ssert the results of the execution
+- **T**ear down and clean up any lingering artifacts
 
 ## Packaging code
 
