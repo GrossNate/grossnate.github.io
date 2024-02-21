@@ -161,10 +161,9 @@ are pure are always pure regardless of the arguments passed in).
 
 Project file structure:
 
--dist
-
-- todo.js
-- todolist.js
+- dist
+  - todo.js
+  - todolist.js
 - lib
   - todo.js
   - todolist.js
